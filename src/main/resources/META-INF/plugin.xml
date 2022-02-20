@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>org.ideadebugplugin.Intellij-Idea-Simple-Plugin-Copy-Debug-Variable</id>
+    <name>Copy Variable While Debugging</name>
+    <!--email="Add_later" url="Add_later"-->
+    <vendor>No</vendor>
+
+    <description><![CDATA[
+    The plugin allows you to select a variable in the variable tree, during debugging, and copy in json format all scanned child elements of the selected variable.
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>com.intellij.modules.xdebugger</depends>
+    <actions>
+        <action id="DebuggerTreeActionImpl"
+                class="org.ideadebugplugin.DebuggerTreeActionImpl"
+                text="Copy as Json"
+                description="Copy in json format all scanned children of selected variable">
+            <add-to-group group-id="XDebugger.ValueGroup" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
